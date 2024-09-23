@@ -1,0 +1,1256 @@
+# Copyright (C) 2024 MK-Scripts
+# This file is distributed under the GNU General Public License v3 or later.
+msgid ""
+msgstr ""
+"Project-Id-Version: Download After Email v2.1.6\n"
+"Report-Msgid-Bugs-To: MK-Scripts <support@download-after-email.com>\n"
+"POT-Creation-Date: 2024-03-02 22:30+0100\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"PO-Revision-Date: 2024-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
+"X-Generator: grunt-wp-i18n1.0.2\n"
+
+#: dae.php:49
+msgid ""
+"\"Download after Email\" "
+"is using the same name "
+"for a variable, function "
+"or a class as another "
+"plugin and may not "
+"function as expected. "
+msgstr ""
+
+#: dae.php:313
+#: includes/functions.php:252
+msgid "Select File"
+msgstr ""
+
+#: dae.php:314
+msgid "Select"
+msgstr ""
+
+#: dae.php:315
+#: includes/functions.php:222
+msgid "No image selected"
+msgstr ""
+
+#: dae.php:316
+#: includes/functions.php:243
+msgid "No file selected"
+msgstr ""
+
+#: dae.php:317
+msgid ""
+"Are you sure you want to "
+"remove this subscriber, "
+"including the attached "
+"data of the "
+"downloadlinks?"
+msgstr ""
+
+#: dae.php:338
+msgid ""
+"The dae-uploads folder "
+"could not be created "
+"within your Wordpress "
+"uploads folder during "
+"the activation of "
+"Download After Email. "
+"Try to adjust the "
+"permissions of your "
+"uploads folder and re-"
+"activate the plugin."
+msgstr ""
+
+#: dae.php:339
+msgid ""
+"More information about "
+"changing file "
+"permissions for "
+"Wordpress."
+msgstr ""
+
+#: dae.php:355
+msgid ""
+"The php_fileinfo "
+"extension is currently "
+"disabled in your PHP "
+"configuration settings. "
+"Download After Email "
+"needs this setting to be "
+"enabled for certain "
+"functionalities."
+msgstr ""
+
+#: includes/admin-menu.php:43
+#: includes/admin-menu.php:63
+msgid "Settings saved."
+msgstr ""
+
+#: includes/admin-menu.php:85
+msgid "Customize Messages"
+msgstr ""
+
+#: includes/admin-menu.php:86
+#: includes/admin-menu.php:608
+msgid "Messages"
+msgstr ""
+
+#: includes/admin-menu.php:94
+#: includes/admin-menu.php:95
+msgid "Subscribers"
+msgstr ""
+
+#: includes/admin-menu.php:103
+#: includes/admin-menu.php:104
+msgid "Options"
+msgstr ""
+
+#: includes/admin-menu.php:133
+msgid "Checkbox Messages"
+msgstr ""
+
+#: includes/admin-menu.php:137
+msgid "Required Checkbox"
+msgstr ""
+
+#: includes/admin-menu.php:140
+msgid ""
+"Enable the use of the "
+"required checkbox."
+msgstr ""
+
+#: includes/admin-menu.php:144
+msgid ""
+"Required Checkbox Text"
+msgstr ""
+
+#: includes/admin-menu.php:146
+#: includes/shortcodes.php:272
+msgid ""
+"I confirm that I have "
+"read and agree to the <a "
+"href=\"#\" target="
+"\"_blank\">Privacy "
+"Policy</a>."
+msgstr ""
+
+#: includes/admin-menu.php:147
+msgid ""
+"Replace # with the "
+"privacy page URL. Saving "
+"while left empty, the "
+"default translatable "
+"value will be used."
+msgstr ""
+
+#: includes/admin-menu.php:151
+msgid "Optional Checkbox"
+msgstr ""
+
+#: includes/admin-menu.php:154
+msgid ""
+"Enable the use of the "
+"optional checkbox. If "
+"Mailchimp integration is "
+"activated, subscribers "
+"are only added to your "
+"Mailchimp audience if "
+"this checkbox is checked "
+"(GDPR compliant)."
+msgstr ""
+
+#: includes/admin-menu.php:158
+msgid ""
+"Optional Checkbox Text"
+msgstr ""
+
+#: includes/admin-menu.php:160
+#: includes/shortcodes.php:293
+msgid ""
+"Subscribe to get "
+"exclusive content and "
+"recommendations every "
+"month. You can "
+"unsubscribe anytime."
+msgstr ""
+
+#: includes/admin-menu.php:161
+#: includes/admin-menu.php:173
+#: includes/admin-menu.php:180
+#: includes/admin-menu.php:187
+#: includes/admin-menu.php:200
+#: includes/admin-menu.php:207
+#: includes/admin-menu.php:264
+msgid ""
+"Saving while left empty, "
+"the default translatable "
+"value will be used."
+msgstr ""
+
+#: includes/admin-menu.php:166
+msgid "Submit Messages"
+msgstr ""
+
+#: includes/admin-menu.php:170
+msgid "Unvalid Input"
+msgstr ""
+
+#: includes/admin-menu.php:172
+#: includes/shortcodes.php:460
+#: includes/shortcodes.php:469
+msgid ""
+"Please make sure all "
+"fields are filled in "
+"correctly."
+msgstr ""
+
+#: includes/admin-menu.php:177
+msgid "Email Exists"
+msgstr ""
+
+#: includes/admin-menu.php:179
+#: includes/shortcodes.php:523
+msgid ""
+"An email with the "
+"download link has "
+"already been sent to "
+"this email address."
+msgstr ""
+
+#: includes/admin-menu.php:184
+msgid "Email Success"
+msgstr ""
+
+#: includes/admin-menu.php:186
+#: includes/shortcodes.php:721
+msgid ""
+"An email has been sent "
+"with the download link."
+msgstr ""
+
+#: includes/admin-menu.php:193
+msgid "Email Messages"
+msgstr ""
+
+#: includes/admin-menu.php:197
+msgid "Unvalid Link"
+msgstr ""
+
+#: includes/admin-menu.php:199
+#: includes/download.php:22
+msgid ""
+"This link has already "
+"been used and is now "
+"unavailable."
+msgstr ""
+
+#: includes/admin-menu.php:204
+msgid "Download Failed"
+msgstr ""
+
+#: includes/admin-menu.php:206
+#: includes/download.php:69
+msgid ""
+"This download file could "
+"not be found. Please try "
+"again or feel free to "
+"contact us."
+msgstr ""
+
+#: includes/admin-menu.php:211
+msgid "From Email"
+msgstr ""
+
+#: includes/admin-menu.php:215
+msgid "From Name"
+msgstr ""
+
+#: includes/admin-menu.php:219
+msgid "Email Subject"
+msgstr ""
+
+#: includes/admin-menu.php:221
+#: includes/shortcodes.php:592
+msgid "Your Free Download"
+msgstr ""
+
+#: includes/admin-menu.php:222
+msgid ""
+"Placeholders are "
+"available excluding "
+"{download_link} and "
+"{download_url}. Saving "
+"while left empty, the "
+"default translatable "
+"value will be used."
+msgstr ""
+
+#: includes/admin-menu.php:226
+msgid ""
+"Notification Email To"
+msgstr ""
+
+#: includes/admin-menu.php:229
+msgid ""
+"Enter an email address "
+"if you want to receive a "
+"notification email. "
+"Separate multiple email "
+"addresses with a "
+"semicolon."
+msgstr ""
+
+#: includes/admin-menu.php:233
+msgid "Content Type"
+msgstr ""
+
+#: includes/admin-menu.php:236
+msgid "HTML"
+msgstr ""
+
+#: includes/admin-menu.php:237
+msgid "Plain"
+msgstr ""
+
+#: includes/admin-menu.php:238
+msgid "Multipart"
+msgstr ""
+
+#: includes/admin-menu.php:240
+msgid ""
+"Multipart may not work "
+"correctly in combination "
+"with some mailer "
+"plugins. The content "
+"type is also applied to "
+"the notification email. "
+"In case plain is "
+"selected, the content "
+"type is set to HTML for "
+"the notification email."
+msgstr ""
+
+#: includes/admin-menu.php:247
+msgid ""
+"Below you can enter the "
+"content of the email "
+"that will be sent to the "
+"subscriber. The "
+"following placeholders "
+"are available:"
+msgstr ""
+
+#: includes/admin-menu.php:303
+msgid "Search results for:"
+msgstr ""
+
+#: includes/admin-menu.php:309
+#: includes/admin-menu.php:340
+#: includes/admin-menu.php:359
+msgid "ID"
+msgstr ""
+
+#: includes/admin-menu.php:310
+#: includes/admin-menu.php:341
+#: includes/post-types.php:695
+msgid "Date"
+msgstr ""
+
+#: includes/admin-menu.php:320
+#: includes/admin-menu.php:351
+msgid "Optin Time"
+msgstr ""
+
+#: includes/admin-menu.php:322
+#: includes/admin-menu.php:353
+msgid "Downloadlinks"
+msgstr ""
+
+#: includes/admin-menu.php:363
+#: includes/post-types.php:692
+msgid "File"
+msgstr ""
+
+#: includes/admin-menu.php:367
+msgid "Created"
+msgstr ""
+
+#: includes/admin-menu.php:371
+msgid "IP (created)"
+msgstr ""
+
+#: includes/admin-menu.php:375
+msgid "Used"
+msgstr ""
+
+#: includes/admin-menu.php:376
+#: includes/admin-menu.php:380
+msgid "not used"
+msgstr ""
+
+#: includes/admin-menu.php:379
+msgid "IP (used)"
+msgstr ""
+
+#: includes/admin-menu.php:396
+msgid "of"
+msgstr ""
+
+#: includes/admin-menu.php:415
+#: includes/admin-menu.php:593
+msgid "Subscribers Log"
+msgstr ""
+
+#: includes/admin-menu.php:418
+msgid "Search"
+msgstr ""
+
+#: includes/admin-menu.php:499
+msgid ""
+"Add Premium Features"
+msgstr ""
+
+#: includes/admin-menu.php:500
+msgid ""
+"Download After Email "
+"Plus is an extension/add-"
+"on that adds the "
+"following premium "
+"features:"
+msgstr ""
+
+#: includes/admin-menu.php:504
+msgid "Form Fields"
+msgstr ""
+
+#: includes/admin-menu.php:505
+msgid ""
+"Create and manage your "
+"own form fields with the "
+"Drag & Drop Form Builder."
+msgstr ""
+
+#: includes/admin-menu.php:508
+msgid "Export CSV"
+msgstr ""
+
+#: includes/admin-menu.php:509
+msgid ""
+"Export subscriber data "
+"to a CSV-file and use it "
+"for email marketing, "
+"newsletters etc."
+msgstr ""
+
+#: includes/admin-menu.php:512
+msgid ""
+"Integration Mailchimp"
+msgstr ""
+
+#: includes/admin-menu.php:513
+msgid ""
+"Automatically add new "
+"subscribers to your "
+"Mailchimp audience."
+msgstr ""
+
+#: includes/admin-menu.php:518
+msgid ""
+"Get Download After Email "
+"Plus"
+msgstr ""
+
+#: includes/admin-menu.php:519
+msgid "More information"
+msgstr ""
+
+#: includes/admin-menu.php:550
+msgid ""
+"Download Restrictions"
+msgstr ""
+
+#: includes/admin-menu.php:555
+msgid "Unlimited Links"
+msgstr ""
+
+#: includes/admin-menu.php:558
+msgid ""
+"Enable the use of "
+"unlimited download links "
+"instead of one-time "
+"download links in emails "
+"received by subscribers."
+msgstr ""
+
+#: includes/admin-menu.php:563
+msgid "Limit Links"
+msgstr ""
+
+#: includes/admin-menu.php:566
+msgid "1 hour"
+msgstr ""
+
+#: includes/admin-menu.php:567
+msgid "3 hours"
+msgstr ""
+
+#: includes/admin-menu.php:568
+msgid "6 hours"
+msgstr ""
+
+#: includes/admin-menu.php:569
+msgid "12 hours"
+msgstr ""
+
+#: includes/admin-menu.php:570
+msgid "24 hours"
+msgstr ""
+
+#: includes/admin-menu.php:571
+msgid "48 hours"
+msgstr ""
+
+#: includes/admin-menu.php:572
+msgid "168 hours"
+msgstr ""
+
+#: includes/admin-menu.php:573
+msgid "One-time"
+msgstr ""
+
+#: includes/admin-menu.php:574
+msgid "Unlimited"
+msgstr ""
+
+#: includes/admin-menu.php:576
+msgid ""
+"Select limit type for "
+"download links in emails "
+"received by subscribers."
+msgstr ""
+
+#: includes/admin-menu.php:581
+msgid "Unlimited Emails"
+msgstr ""
+
+#: includes/admin-menu.php:584
+msgid ""
+"Enable the use of "
+"unlimited emails (split "
+"time of 60s in case a "
+"subscriber submits the "
+"same download form "
+"again) instead of one "
+"email per subscriber per "
+"download file (name)."
+msgstr ""
+
+#: includes/admin-menu.php:589
+msgid "Access Restrictions"
+msgstr ""
+
+#: includes/admin-menu.php:596
+msgid "Administrator"
+msgstr ""
+
+#: includes/admin-menu.php:597
+msgid "Author"
+msgstr ""
+
+#: includes/admin-menu.php:603
+msgid "Deactivation"
+msgstr ""
+
+#: includes/admin-menu.php:604
+msgid ""
+"The following data will "
+"be deleted on "
+"deactivation:"
+msgstr ""
+
+#: includes/admin-menu.php:612
+msgid ""
+"Subscribers + "
+"Downloadlinks"
+msgstr ""
+
+#: includes/admin-menu.php:642
+#, php-format
+msgid ""
+"If you like Download "
+"After Email, please give "
+"us a %s rating. A huge "
+"thanks in advance!"
+msgstr ""
+
+#: includes/post-types.php:11
+msgctxt ""
+"post type general name"
+msgid "Downloads"
+msgstr ""
+
+#: includes/post-types.php:12
+msgctxt ""
+"post type singular name"
+msgid "Download"
+msgstr ""
+
+#: includes/post-types.php:13
+msgctxt "download"
+msgid "Add New"
+msgstr ""
+
+#: includes/post-types.php:14
+msgid "Add New Download"
+msgstr ""
+
+#: includes/post-types.php:15
+msgid "Edit Download"
+msgstr ""
+
+#: includes/post-types.php:16
+msgid "New Download"
+msgstr ""
+
+#: includes/post-types.php:17
+msgid "View Download"
+msgstr ""
+
+#: includes/post-types.php:18
+msgid "View Downloads"
+msgstr ""
+
+#: includes/post-types.php:19
+msgid "Search Downloads"
+msgstr ""
+
+#: includes/post-types.php:20
+msgid "No downloads found."
+msgstr ""
+
+#: includes/post-types.php:21
+msgid ""
+"No downloads found in "
+"Trash."
+msgstr ""
+
+#: includes/post-types.php:23
+msgid "All Downloads"
+msgstr ""
+
+#: includes/post-types.php:24
+msgid "Download Archives"
+msgstr ""
+
+#: includes/post-types.php:25
+msgid "Download Attributes"
+msgstr ""
+
+#: includes/post-types.php:26
+msgid ""
+"Insert into download"
+msgstr ""
+
+#: includes/post-types.php:27
+msgid ""
+"Uploaded to this download"
+msgstr ""
+
+#: includes/post-types.php:28
+msgctxt "download"
+msgid "Featured Image"
+msgstr ""
+
+#: includes/post-types.php:29
+msgctxt "download"
+msgid "Set featured image"
+msgstr ""
+
+#: includes/post-types.php:30
+msgctxt "download"
+msgid ""
+"Remove featured image"
+msgstr ""
+
+#: includes/post-types.php:31
+msgctxt "download"
+msgid ""
+"Use as featured image"
+msgstr ""
+
+#: includes/post-types.php:32
+msgid ""
+"Filter downloads list"
+msgstr ""
+
+#: includes/post-types.php:33
+msgid ""
+"Downloads list navigation"
+msgstr ""
+
+#: includes/post-types.php:34
+msgid "Downloads list"
+msgstr ""
+
+#: includes/post-types.php:63
+msgid "M j, Y @ H:i"
+msgstr ""
+
+#: includes/post-types.php:67
+#: includes/post-types.php:70
+msgid "Download updated."
+msgstr ""
+
+#: includes/post-types.php:68
+msgid ""
+"Custom field updated."
+msgstr ""
+
+#: includes/post-types.php:69
+msgid ""
+"Custom field deleted."
+msgstr ""
+
+#: includes/post-types.php:71
+#, php-format
+msgid ""
+"Download restored to "
+"revision from %s"
+msgstr ""
+
+#: includes/post-types.php:72
+msgid "Download published."
+msgstr ""
+
+#: includes/post-types.php:73
+msgid "Download saved."
+msgstr ""
+
+#: includes/post-types.php:74
+msgid "Download submitted."
+msgstr ""
+
+#: includes/post-types.php:75
+#, php-format
+msgid ""
+"Page scheduled for: %s."
+msgstr ""
+
+#: includes/post-types.php:76
+msgid ""
+"Download draft updated."
+msgstr ""
+
+#: includes/post-types.php:85
+msgid "Settings"
+msgstr ""
+
+#: includes/post-types.php:86
+#: includes/post-types.php:694
+msgid "Shortcode"
+msgstr ""
+
+#: includes/post-types.php:87
+#: includes/post-types.php:478
+msgid "Preview"
+msgstr ""
+
+#: includes/post-types.php:88
+msgid "Duplicate"
+msgstr ""
+
+#: includes/post-types.php:127
+msgid "Download file"
+msgstr ""
+
+#: includes/post-types.php:131
+msgid "Download file *"
+msgstr ""
+
+#: includes/post-types.php:137
+msgid "File image"
+msgstr ""
+
+#: includes/post-types.php:143
+msgid "File image size"
+msgstr ""
+
+#: includes/post-types.php:146
+msgid "Full"
+msgstr ""
+
+#: includes/post-types.php:147
+msgid "Large"
+msgstr ""
+
+#: includes/post-types.php:148
+msgid "Medium large"
+msgstr ""
+
+#: includes/post-types.php:149
+msgid "Medium"
+msgstr ""
+
+#: includes/post-types.php:150
+msgid "Thumbnail"
+msgstr ""
+
+#: includes/post-types.php:155
+msgid ""
+"File image width (wide "
+"area)"
+msgstr ""
+
+#: includes/post-types.php:159
+msgid ""
+"File image width (small "
+"area)"
+msgstr ""
+
+#: includes/post-types.php:164
+#: includes/post-types.php:168
+msgid "Background"
+msgstr ""
+
+#: includes/post-types.php:171
+msgid "Image"
+msgstr ""
+
+#: includes/post-types.php:172
+msgid "Color"
+msgstr ""
+
+#: includes/post-types.php:178
+msgid ""
+"Background-attachment"
+msgstr ""
+
+#: includes/post-types.php:181
+msgid "Scroll"
+msgstr ""
+
+#: includes/post-types.php:182
+msgid "Fixed"
+msgstr ""
+
+#: includes/post-types.php:188
+msgid "Title"
+msgstr ""
+
+#: includes/post-types.php:192
+msgid "Title font-size"
+msgstr ""
+
+#: includes/post-types.php:196
+msgid "Title color"
+msgstr ""
+
+#: includes/post-types.php:201
+msgid "Content"
+msgstr ""
+
+#: includes/post-types.php:205
+msgid "Text font-size"
+msgstr ""
+
+#: includes/post-types.php:209
+msgid "Text color"
+msgstr ""
+
+#: includes/post-types.php:214
+msgid "Button"
+msgstr ""
+
+#: includes/post-types.php:218
+msgid "Button text"
+msgstr ""
+
+#: includes/post-types.php:222
+msgid "Button color"
+msgstr ""
+
+#: includes/post-types.php:226
+msgid "Button color hover"
+msgstr ""
+
+#: includes/post-types.php:230
+msgid "Button background"
+msgstr ""
+
+#: includes/post-types.php:234
+msgid ""
+"Button background hover"
+msgstr ""
+
+#: includes/post-types.php:238
+msgid "Button border-color"
+msgstr ""
+
+#: includes/post-types.php:242
+msgid ""
+"Button border-color hover"
+msgstr ""
+
+#: includes/post-types.php:246
+msgid "Button font-size"
+msgstr ""
+
+#: includes/post-types.php:250
+msgid "Button width"
+msgstr ""
+
+#: includes/post-types.php:254
+msgid "Button padding"
+msgstr ""
+
+#: includes/post-types.php:259
+#: includes/post-types.php:263
+msgid "Label"
+msgstr ""
+
+#: includes/post-types.php:267
+msgid "Label font-size"
+msgstr ""
+
+#: includes/post-types.php:271
+msgid "Label color"
+msgstr ""
+
+#: includes/post-types.php:276
+msgid "Input fields"
+msgstr ""
+
+#: includes/post-types.php:280
+msgid "Input font-size"
+msgstr ""
+
+#: includes/post-types.php:284
+msgid "Input color"
+msgstr ""
+
+#: includes/post-types.php:288
+msgid "Input background"
+msgstr ""
+
+#: includes/post-types.php:292
+msgid "Input icon color"
+msgstr ""
+
+#: includes/post-types.php:296
+msgid ""
+"Input icon background"
+msgstr ""
+
+#: includes/post-types.php:301
+msgid "Placeholders"
+msgstr ""
+
+#: includes/post-types.php:306
+msgid "Placeholder text"
+msgstr ""
+
+#: includes/post-types.php:311
+msgid "Placeholder color"
+msgstr ""
+
+#: includes/post-types.php:316
+msgid "Checkboxes"
+msgstr ""
+
+#: includes/post-types.php:320
+msgid "Checkbox settings"
+msgstr ""
+
+#: includes/post-types.php:321
+msgid ""
+"Click here to configure "
+"your checkboxes."
+msgstr ""
+
+#: includes/post-types.php:324
+msgid ""
+"Checkbox text font-size"
+msgstr ""
+
+#: includes/post-types.php:328
+msgid "Checkbox text color"
+msgstr ""
+
+#: includes/post-types.php:332
+msgid "Checkbox link color"
+msgstr ""
+
+#: includes/post-types.php:336
+msgid ""
+"Checkbox link color hover"
+msgstr ""
+
+#: includes/post-types.php:341
+msgid "Submit button"
+msgstr ""
+
+#: includes/post-types.php:345
+msgid "Submit button text"
+msgstr ""
+
+#: includes/post-types.php:349
+msgid "Submit button color"
+msgstr ""
+
+#: includes/post-types.php:353
+msgid ""
+"Submit button color hover"
+msgstr ""
+
+#: includes/post-types.php:357
+msgid ""
+"Submit button background"
+msgstr ""
+
+#: includes/post-types.php:361
+msgid ""
+"Submit button background "
+"hover"
+msgstr ""
+
+#: includes/post-types.php:365
+msgid ""
+"Submit button font-size"
+msgstr ""
+
+#: includes/post-types.php:370
+msgid "Submit message"
+msgstr ""
+
+#: includes/post-types.php:374
+msgid ""
+"Submit message font-size"
+msgstr ""
+
+#: includes/post-types.php:378
+msgid ""
+"Submit success message "
+"color"
+msgstr ""
+
+#: includes/post-types.php:382
+msgid ""
+"Submit error message "
+"color"
+msgstr ""
+
+#: includes/post-types.php:387
+msgid "Borders"
+msgstr ""
+
+#: includes/post-types.php:391
+msgid "Border-radius"
+msgstr ""
+
+#: includes/post-types.php:396
+msgid "Font"
+msgstr ""
+
+#: includes/post-types.php:400
+msgid "Font-family"
+msgstr ""
+
+#: includes/post-types.php:405
+msgid "Alignment"
+msgstr ""
+
+#: includes/post-types.php:409
+msgid "Alignment wide area"
+msgstr ""
+
+#: includes/post-types.php:412
+#: includes/post-types.php:422
+msgid "Align center"
+msgstr ""
+
+#: includes/post-types.php:413
+#: includes/post-types.php:423
+msgid "Align left"
+msgstr ""
+
+#: includes/post-types.php:414
+#: includes/post-types.php:424
+msgid "Align right"
+msgstr ""
+
+#: includes/post-types.php:419
+msgid ""
+"Alignment small area"
+msgstr ""
+
+#: includes/post-types.php:457
+msgid ""
+"Copy and paste this "
+"shortcode into your post "
+"or page"
+msgstr ""
+
+#: includes/post-types.php:462
+msgid ""
+"Shortcode is available "
+"after saving."
+msgstr ""
+
+#: includes/post-types.php:465
+msgid ""
+"Set \"css\" attribute to "
+"\"off\" to display "
+"without CSS styling "
+"options. For example: "
+"[download_after_email id="
+"\"123\" css=\"off\"]"
+msgstr ""
+
+#: includes/post-types.php:475
+msgid "Default"
+msgstr ""
+
+#: includes/post-types.php:476
+msgid ""
+"No CSS styling options"
+msgstr ""
+
+#: includes/post-types.php:489
+msgid ""
+"Use settings of another "
+"download"
+msgstr ""
+
+#: includes/post-types.php:490
+msgid ""
+"Download ID (e.g. 215)"
+msgstr ""
+
+#: includes/post-types.php:491
+msgid ""
+"Duplicate the settings "
+"of another download "
+"during saving, excluding "
+"the section Download "
+"file."
+msgstr ""
+
+#: includes/post-types.php:693
+msgid "Links"
+msgstr ""
+
+#: includes/preview.php:25
+msgid ""
+"Click the preview button "
+"to see the latest "
+"changes..."
+msgstr ""
+
+#: includes/preview.php:37
+msgid ""
+"Change the size of the "
+"window to see how it "
+"looks in smaller areas. "
+"The preview is displayed "
+"while front-end css has "
+"been loaded, such as the "
+"stylesheet of your "
+"current theme. This may "
+"affect the layout. Make "
+"sure you have selected a "
+"download file before "
+"testing the form."
+msgstr ""
+
+#: includes/shortcodes.php:451
+msgid ""
+"There is currently no "
+"download file available."
+msgstr ""
+
+#: includes/shortcodes.php:595
+msgid ""
+"<p>Hi,</p><p>Thank you "
+"for subscribing.</"
+"p><p>You can find your "
+"Free Download here: "
+"{download_link}</p>"
+msgstr ""
+
+#: includes/shortcodes.php:669
+msgid "Download File"
+msgstr ""
+
+#: includes/shortcodes.php:684
+msgid ""
+"A download form has been "
+"submitted successfully "
+"with the following "
+"values:"
+msgstr ""
+
+#: includes/shortcodes.php:704
+msgid ""
+"New Download Form "
+"Submission"
+msgstr ""
+
+#: includes/update.php:10
+msgid ""
+"Download After Email has "
+"been updated "
+"successfully! To "
+"complete the update "
+"process, the database "
+"must be updated. It is "
+"advisable to make a "
+"backup beforehand. "
+"Please do not refresh "
+"the page during the "
+"update process."
+msgstr ""
+
+#: includes/update.php:12
+msgid ""
+"The database update for "
+"Download After Email has "
+"been completed!"
+msgstr ""
+
+#: includes/update.php:17
+msgid ""
+"Database update version"
+msgstr ""
+
+#: includes/update.php:24
+msgid ""
+"Start/Proceed Update"
+msgstr ""
+
+#: includes/update.php:25
+msgid "step(s) to go"
+msgstr ""
+
+#: includes/update.php:122
+msgid ""
+"The database update for "
+"Download After Email "
+"could not be performed "
+"because you do not have "
+"the correct user "
+"permissions."
+msgstr ""
+
+#: includes/update.php:160
+msgid ""
+"The database update for "
+"Download After Email "
+"could not be performed "
+"because a new database "
+"table could not be "
+"created."
+msgstr ""
