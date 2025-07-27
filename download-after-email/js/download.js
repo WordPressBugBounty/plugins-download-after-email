@@ -5,7 +5,8 @@ jQuery( document ).ready( function( $ ) {
 		var formdata = new FormData( form[0] ),
 			array = [],
 			arrayLength,
-			i;
+			i
+		;
 		
 		formdata.append( '_ajax_nonce', objDaeDownload.nonce );
 		formdata.append( 'action', action );
@@ -58,31 +59,54 @@ jQuery( document ).ready( function( $ ) {
 		}
 		
 	} );
+
+	$( 'body' ).on( 'focus', 'input.dae-shortcode-register-field[name="email"]', function() {
+
+		var form 		= $( this ).closest( '.dae-shortcode-register-form' ),
+			fileName 	= form.find( 'input[name="file"]' ).val()
+		;
+
+		if ( form.find( 'input[name="dae_nonce"]' ).length === 0 ) {
+
+			$.ajax( {
+				url: objDaeDownload.ajaxUrl,
+				type: 'POST',
+				data: {
+					action: 'dae_create_ajax_nonce',
+					file: fileName
+				},
+				success: function( response ) {
+					if ( response.success && response.data && response.data.nonce ) {
+						form.append( '<input type="hidden" name="dae_nonce" value="' + response.data.nonce + '" />' );
+					}
+				}
+			} );
+
+		}
+
+	} );
 	
 	$( 'body' ).on( 'submit', '.dae-shortcode-register-form', function( e ) {
 		
 		e.preventDefault();
 		
-		var currentDate = new Date(),
-			ecnon = currentDate.getUTCHours() * currentDate.getUTCHours();
-			form = $( this ),
+		var form = $( this ),
 			objData = {
 				form_content: form.parent().parent().html()
-			};
+			}
+		;
 
-		form.parent().find( '.dae-shortcode-register-form' ).append( '<input type="hidden" name="ecnon" value="' + ecnon + '" />' );
-		
 		form.parent().find( '.dae-shortcode-register-message' ).empty();
 		form.find( '.dae-shortcode-register-loading' ).show();
 		
 		mkAjax( 'dae_send_downloadlink', $( this ), objData, function( data ) {
-
+	
 			dataObj = JSON.parse( data );
-
+	
 			if ( 'success' === dataObj.type ) {
 				form[0].reset();
 			}
-
+	
 			form.parent().find( '.dae-shortcode-register-message' ).html( dataObj.message );
 			form.find( '.dae-shortcode-register-loading' ).hide();
 			

@@ -1,88 +1,53 @@
-# Copyright (C) 2024 MK-Scripts
-# This file is distributed under the GNU General Public License v3 or later.
+# Copyright (C) 2025 MK-Scripts
+# This file is distributed under the same license as the Download After Email plugin.
 msgid ""
 msgstr ""
-"Project-Id-Version: Download After Email v2.1.6\n"
-"Report-Msgid-Bugs-To: MK-Scripts <support@download-after-email.com>\n"
-"POT-Creation-Date: 2024-03-02 22:30+0100\n"
+"Project-Id-Version: Download After Email 2.1.7\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/download-after-email\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2024-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
-"X-Generator: grunt-wp-i18n1.0.2\n"
+"POT-Creation-Date: 2025-07-27T19:13:46+02:00\n"
+"X-Generator: WP-CLI 2.12.0\n"
+"X-Domain: download-after-email\n"
 
 #: dae.php:49
-msgid ""
-"\"Download after Email\" "
-"is using the same name "
-"for a variable, function "
-"or a class as another "
-"plugin and may not "
-"function as expected. "
-msgstr ""
-
-#: dae.php:313
-#: includes/functions.php:252
-msgid "Select File"
-msgstr ""
-
-#: dae.php:314
-msgid "Select"
+msgid "\"Download after Email\" is using the same name for a variable, function or a class as another plugin and may not function as expected. "
 msgstr ""
 
 #: dae.php:315
-#: includes/functions.php:222
-msgid "No image selected"
+#: includes/functions.php:274
+msgid "Select File"
 msgstr ""
 
 #: dae.php:316
-#: includes/functions.php:243
-msgid "No file selected"
+msgid "Select"
 msgstr ""
 
 #: dae.php:317
-msgid ""
-"Are you sure you want to "
-"remove this subscriber, "
-"including the attached "
-"data of the "
-"downloadlinks?"
+#: includes/functions.php:244
+msgid "No image selected"
 msgstr ""
 
-#: dae.php:338
-msgid ""
-"The dae-uploads folder "
-"could not be created "
-"within your Wordpress "
-"uploads folder during "
-"the activation of "
-"Download After Email. "
-"Try to adjust the "
-"permissions of your "
-"uploads folder and re-"
-"activate the plugin."
+#: dae.php:318
+#: includes/functions.php:265
+msgid "No file selected"
 msgstr ""
 
-#: dae.php:339
-msgid ""
-"More information about "
-"changing file "
-"permissions for "
-"Wordpress."
+#: dae.php:319
+msgid "Are you sure you want to remove this subscriber, including the attached data of the downloadlinks?"
 msgstr ""
 
-#: dae.php:355
-msgid ""
-"The php_fileinfo "
-"extension is currently "
-"disabled in your PHP "
-"configuration settings. "
-"Download After Email "
-"needs this setting to be "
-"enabled for certain "
-"functionalities."
+#: dae.php:340
+msgid "The dae-uploads folder could not be created within your Wordpress uploads folder during the activation of Download After Email. Try to adjust the permissions of your uploads folder and re-activate the plugin."
+msgstr ""
+
+#: dae.php:341
+msgid "More information about changing file permissions for Wordpress."
+msgstr ""
+
+#: dae.php:357
+msgid "The php_fileinfo extension is currently disabled in your PHP configuration settings. Download After Email needs this setting to be enabled for certain functionalities."
 msgstr ""
 
 #: includes/admin-menu.php:43
@@ -117,65 +82,30 @@ msgstr ""
 msgid "Required Checkbox"
 msgstr ""
 
-#: includes/admin-menu.php:140
-msgid ""
-"Enable the use of the "
-"required checkbox."
-msgstr ""
-
 #: includes/admin-menu.php:144
-msgid ""
-"Required Checkbox Text"
+msgid "Required Checkbox Text"
 msgstr ""
 
 #: includes/admin-menu.php:146
 #: includes/shortcodes.php:272
-msgid ""
-"I confirm that I have "
-"read and agree to the <a "
-"href=\"#\" target="
-"\"_blank\">Privacy "
-"Policy</a>."
+msgid "I confirm that I have read and agree to the <a href=\"#\" target=\"_blank\">Privacy Policy</a>."
 msgstr ""
 
 #: includes/admin-menu.php:147
-msgid ""
-"Replace # with the "
-"privacy page URL. Saving "
-"while left empty, the "
-"default translatable "
-"value will be used."
+msgid "Replace # with the privacy page URL. Saving while left empty, the default translatable value will be used."
 msgstr ""
 
 #: includes/admin-menu.php:151
 msgid "Optional Checkbox"
 msgstr ""
 
-#: includes/admin-menu.php:154
-msgid ""
-"Enable the use of the "
-"optional checkbox. If "
-"Mailchimp integration is "
-"activated, subscribers "
-"are only added to your "
-"Mailchimp audience if "
-"this checkbox is checked "
-"(GDPR compliant)."
-msgstr ""
-
 #: includes/admin-menu.php:158
-msgid ""
-"Optional Checkbox Text"
+msgid "Optional Checkbox Text"
 msgstr ""
 
 #: includes/admin-menu.php:160
 #: includes/shortcodes.php:293
-msgid ""
-"Subscribe to get "
-"exclusive content and "
-"recommendations every "
-"month. You can "
-"unsubscribe anytime."
+msgid "Subscribe to get exclusive content and recommendations every month. You can unsubscribe anytime."
 msgstr ""
 
 #: includes/admin-menu.php:161
@@ -185,10 +115,7 @@ msgstr ""
 #: includes/admin-menu.php:200
 #: includes/admin-menu.php:207
 #: includes/admin-menu.php:264
-msgid ""
-"Saving while left empty, "
-"the default translatable "
-"value will be used."
+msgid "Saving while left empty, the default translatable value will be used."
 msgstr ""
 
 #: includes/admin-menu.php:166
@@ -200,12 +127,9 @@ msgid "Unvalid Input"
 msgstr ""
 
 #: includes/admin-menu.php:172
-#: includes/shortcodes.php:460
-#: includes/shortcodes.php:469
-msgid ""
-"Please make sure all "
-"fields are filled in "
-"correctly."
+#: includes/shortcodes.php:494
+#: includes/shortcodes.php:512
+msgid "Please make sure all fields are filled in correctly."
 msgstr ""
 
 #: includes/admin-menu.php:177
@@ -213,12 +137,8 @@ msgid "Email Exists"
 msgstr ""
 
 #: includes/admin-menu.php:179
-#: includes/shortcodes.php:523
-msgid ""
-"An email with the "
-"download link has "
-"already been sent to "
-"this email address."
+#: includes/shortcodes.php:566
+msgid "An email with the download link has already been sent to this email address."
 msgstr ""
 
 #: includes/admin-menu.php:184
@@ -226,10 +146,8 @@ msgid "Email Success"
 msgstr ""
 
 #: includes/admin-menu.php:186
-#: includes/shortcodes.php:721
-msgid ""
-"An email has been sent "
-"with the download link."
+#: includes/shortcodes.php:764
+msgid "An email has been sent with the download link."
 msgstr ""
 
 #: includes/admin-menu.php:193
@@ -242,10 +160,7 @@ msgstr ""
 
 #: includes/admin-menu.php:199
 #: includes/download.php:22
-msgid ""
-"This link has already "
-"been used and is now "
-"unavailable."
+msgid "This link has already been used and is now unavailable."
 msgstr ""
 
 #: includes/admin-menu.php:204
@@ -253,12 +168,8 @@ msgid "Download Failed"
 msgstr ""
 
 #: includes/admin-menu.php:206
-#: includes/download.php:69
-msgid ""
-"This download file could "
-"not be found. Please try "
-"again or feel free to "
-"contact us."
+#: includes/download.php:60
+msgid "This download file could not be found. Please try again or feel free to contact us."
 msgstr ""
 
 #: includes/admin-menu.php:211
@@ -274,34 +185,20 @@ msgid "Email Subject"
 msgstr ""
 
 #: includes/admin-menu.php:221
-#: includes/shortcodes.php:592
+#: includes/shortcodes.php:635
 msgid "Your Free Download"
 msgstr ""
 
 #: includes/admin-menu.php:222
-msgid ""
-"Placeholders are "
-"available excluding "
-"{download_link} and "
-"{download_url}. Saving "
-"while left empty, the "
-"default translatable "
-"value will be used."
+msgid "Placeholders are available excluding {download_link} and {download_url}. Saving while left empty, the default translatable value will be used."
 msgstr ""
 
 #: includes/admin-menu.php:226
-msgid ""
-"Notification Email To"
+msgid "Notification Email To"
 msgstr ""
 
 #: includes/admin-menu.php:229
-msgid ""
-"Enter an email address "
-"if you want to receive a "
-"notification email. "
-"Separate multiple email "
-"addresses with a "
-"semicolon."
+msgid "Enter an email address if you want to receive a notification email. Separate multiple email addresses with a semicolon."
 msgstr ""
 
 #: includes/admin-menu.php:233
@@ -321,27 +218,11 @@ msgid "Multipart"
 msgstr ""
 
 #: includes/admin-menu.php:240
-msgid ""
-"Multipart may not work "
-"correctly in combination "
-"with some mailer "
-"plugins. The content "
-"type is also applied to "
-"the notification email. "
-"In case plain is "
-"selected, the content "
-"type is set to HTML for "
-"the notification email."
+msgid "Multipart may not work correctly in combination with some mailer plugins. The content type is also applied to the notification email. In case plain is selected, the content type is set to HTML for the notification email."
 msgstr ""
 
 #: includes/admin-menu.php:247
-msgid ""
-"Below you can enter the "
-"content of the email "
-"that will be sent to the "
-"subscriber. The "
-"following placeholders "
-"are available:"
+msgid "Below you can enter the content of the email that will be sent to the subscriber. The following placeholders are available:"
 msgstr ""
 
 #: includes/admin-menu.php:303
@@ -410,17 +291,11 @@ msgid "Search"
 msgstr ""
 
 #: includes/admin-menu.php:499
-msgid ""
-"Add Premium Features"
+msgid "Add Premium Features"
 msgstr ""
 
 #: includes/admin-menu.php:500
-msgid ""
-"Download After Email "
-"Plus is an extension/add-"
-"on that adds the "
-"following premium "
-"features:"
+msgid "Download After Email Plus is an extension/add-on that adds the following premium features:"
 msgstr ""
 
 #: includes/admin-menu.php:504
@@ -428,10 +303,7 @@ msgid "Form Fields"
 msgstr ""
 
 #: includes/admin-menu.php:505
-msgid ""
-"Create and manage your "
-"own form fields with the "
-"Drag & Drop Form Builder."
+msgid "Create and manage your own form fields with the Drag & Drop Form Builder."
 msgstr ""
 
 #: includes/admin-menu.php:508
@@ -439,29 +311,19 @@ msgid "Export CSV"
 msgstr ""
 
 #: includes/admin-menu.php:509
-msgid ""
-"Export subscriber data "
-"to a CSV-file and use it "
-"for email marketing, "
-"newsletters etc."
+msgid "Export subscriber data to a CSV-file and use it for email marketing, newsletters etc."
 msgstr ""
 
 #: includes/admin-menu.php:512
-msgid ""
-"Integration Mailchimp"
+msgid "Integration Mailchimp"
 msgstr ""
 
 #: includes/admin-menu.php:513
-msgid ""
-"Automatically add new "
-"subscribers to your "
-"Mailchimp audience."
+msgid "Automatically add new subscribers to your Mailchimp audience."
 msgstr ""
 
 #: includes/admin-menu.php:518
-msgid ""
-"Get Download After Email "
-"Plus"
+msgid "Get Download After Email Plus"
 msgstr ""
 
 #: includes/admin-menu.php:519
@@ -469,8 +331,7 @@ msgid "More information"
 msgstr ""
 
 #: includes/admin-menu.php:550
-msgid ""
-"Download Restrictions"
+msgid "Download Restrictions"
 msgstr ""
 
 #: includes/admin-menu.php:555
@@ -478,12 +339,7 @@ msgid "Unlimited Links"
 msgstr ""
 
 #: includes/admin-menu.php:558
-msgid ""
-"Enable the use of "
-"unlimited download links "
-"instead of one-time "
-"download links in emails "
-"received by subscribers."
+msgid "Enable the use of unlimited download links instead of one-time download links in emails received by subscribers."
 msgstr ""
 
 #: includes/admin-menu.php:563
@@ -527,10 +383,7 @@ msgid "Unlimited"
 msgstr ""
 
 #: includes/admin-menu.php:576
-msgid ""
-"Select limit type for "
-"download links in emails "
-"received by subscribers."
+msgid "Select limit type for download links in emails received by subscribers."
 msgstr ""
 
 #: includes/admin-menu.php:581
@@ -538,15 +391,7 @@ msgid "Unlimited Emails"
 msgstr ""
 
 #: includes/admin-menu.php:584
-msgid ""
-"Enable the use of "
-"unlimited emails (split "
-"time of 60s in case a "
-"subscriber submits the "
-"same download form "
-"again) instead of one "
-"email per subscriber per "
-"download file (name)."
+msgid "Enable the use of unlimited emails (split time of 60s in case a subscriber submits the same download form again) instead of one email per subscriber per download file (name)."
 msgstr ""
 
 #: includes/admin-menu.php:589
@@ -566,36 +411,25 @@ msgid "Deactivation"
 msgstr ""
 
 #: includes/admin-menu.php:604
-msgid ""
-"The following data will "
-"be deleted on "
-"deactivation:"
+msgid "The following data will be deleted on deactivation:"
 msgstr ""
 
 #: includes/admin-menu.php:612
-msgid ""
-"Subscribers + "
-"Downloadlinks"
+msgid "Subscribers + Downloadlinks"
 msgstr ""
 
 #: includes/admin-menu.php:642
 #, php-format
-msgid ""
-"If you like Download "
-"After Email, please give "
-"us a %s rating. A huge "
-"thanks in advance!"
+msgid "If you like Download After Email, please give us a %s rating. A huge thanks in advance!"
 msgstr ""
 
 #: includes/post-types.php:11
-msgctxt ""
-"post type general name"
+msgctxt "post type general name"
 msgid "Downloads"
 msgstr ""
 
 #: includes/post-types.php:12
-msgctxt ""
-"post type singular name"
+msgctxt "post type singular name"
 msgid "Download"
 msgstr ""
 
@@ -633,9 +467,7 @@ msgid "No downloads found."
 msgstr ""
 
 #: includes/post-types.php:21
-msgid ""
-"No downloads found in "
-"Trash."
+msgid "No downloads found in Trash."
 msgstr ""
 
 #: includes/post-types.php:23
@@ -651,13 +483,11 @@ msgid "Download Attributes"
 msgstr ""
 
 #: includes/post-types.php:26
-msgid ""
-"Insert into download"
+msgid "Insert into download"
 msgstr ""
 
 #: includes/post-types.php:27
-msgid ""
-"Uploaded to this download"
+msgid "Uploaded to this download"
 msgstr ""
 
 #: includes/post-types.php:28
@@ -672,24 +502,20 @@ msgstr ""
 
 #: includes/post-types.php:30
 msgctxt "download"
-msgid ""
-"Remove featured image"
+msgid "Remove featured image"
 msgstr ""
 
 #: includes/post-types.php:31
 msgctxt "download"
-msgid ""
-"Use as featured image"
+msgid "Use as featured image"
 msgstr ""
 
 #: includes/post-types.php:32
-msgid ""
-"Filter downloads list"
+msgid "Filter downloads list"
 msgstr ""
 
 #: includes/post-types.php:33
-msgid ""
-"Downloads list navigation"
+msgid "Downloads list navigation"
 msgstr ""
 
 #: includes/post-types.php:34
@@ -706,20 +532,16 @@ msgid "Download updated."
 msgstr ""
 
 #: includes/post-types.php:68
-msgid ""
-"Custom field updated."
+msgid "Custom field updated."
 msgstr ""
 
 #: includes/post-types.php:69
-msgid ""
-"Custom field deleted."
+msgid "Custom field deleted."
 msgstr ""
 
 #: includes/post-types.php:71
 #, php-format
-msgid ""
-"Download restored to "
-"revision from %s"
+msgid "Download restored to revision from %s"
 msgstr ""
 
 #: includes/post-types.php:72
@@ -736,13 +558,11 @@ msgstr ""
 
 #: includes/post-types.php:75
 #, php-format
-msgid ""
-"Page scheduled for: %s."
+msgid "Page scheduled for: %s."
 msgstr ""
 
 #: includes/post-types.php:76
-msgid ""
-"Download draft updated."
+msgid "Download draft updated."
 msgstr ""
 
 #: includes/post-types.php:85
@@ -800,15 +620,11 @@ msgid "Thumbnail"
 msgstr ""
 
 #: includes/post-types.php:155
-msgid ""
-"File image width (wide "
-"area)"
+msgid "File image width (wide area)"
 msgstr ""
 
 #: includes/post-types.php:159
-msgid ""
-"File image width (small "
-"area)"
+msgid "File image width (small area)"
 msgstr ""
 
 #: includes/post-types.php:164
@@ -825,8 +641,7 @@ msgid "Color"
 msgstr ""
 
 #: includes/post-types.php:178
-msgid ""
-"Background-attachment"
+msgid "Background-attachment"
 msgstr ""
 
 #: includes/post-types.php:181
@@ -882,8 +697,7 @@ msgid "Button background"
 msgstr ""
 
 #: includes/post-types.php:234
-msgid ""
-"Button background hover"
+msgid "Button background hover"
 msgstr ""
 
 #: includes/post-types.php:238
@@ -891,8 +705,7 @@ msgid "Button border-color"
 msgstr ""
 
 #: includes/post-types.php:242
-msgid ""
-"Button border-color hover"
+msgid "Button border-color hover"
 msgstr ""
 
 #: includes/post-types.php:246
@@ -941,8 +754,7 @@ msgid "Input icon color"
 msgstr ""
 
 #: includes/post-types.php:296
-msgid ""
-"Input icon background"
+msgid "Input icon background"
 msgstr ""
 
 #: includes/post-types.php:301
@@ -966,14 +778,11 @@ msgid "Checkbox settings"
 msgstr ""
 
 #: includes/post-types.php:321
-msgid ""
-"Click here to configure "
-"your checkboxes."
+msgid "Click here to configure your checkboxes."
 msgstr ""
 
 #: includes/post-types.php:324
-msgid ""
-"Checkbox text font-size"
+msgid "Checkbox text font-size"
 msgstr ""
 
 #: includes/post-types.php:328
@@ -985,8 +794,7 @@ msgid "Checkbox link color"
 msgstr ""
 
 #: includes/post-types.php:336
-msgid ""
-"Checkbox link color hover"
+msgid "Checkbox link color hover"
 msgstr ""
 
 #: includes/post-types.php:341
@@ -1002,24 +810,19 @@ msgid "Submit button color"
 msgstr ""
 
 #: includes/post-types.php:353
-msgid ""
-"Submit button color hover"
+msgid "Submit button color hover"
 msgstr ""
 
 #: includes/post-types.php:357
-msgid ""
-"Submit button background"
+msgid "Submit button background"
 msgstr ""
 
 #: includes/post-types.php:361
-msgid ""
-"Submit button background "
-"hover"
+msgid "Submit button background hover"
 msgstr ""
 
 #: includes/post-types.php:365
-msgid ""
-"Submit button font-size"
+msgid "Submit button font-size"
 msgstr ""
 
 #: includes/post-types.php:370
@@ -1027,20 +830,15 @@ msgid "Submit message"
 msgstr ""
 
 #: includes/post-types.php:374
-msgid ""
-"Submit message font-size"
+msgid "Submit message font-size"
 msgstr ""
 
 #: includes/post-types.php:378
-msgid ""
-"Submit success message "
-"color"
+msgid "Submit success message color"
 msgstr ""
 
 #: includes/post-types.php:382
-msgid ""
-"Submit error message "
-"color"
+msgid "Submit error message color"
 msgstr ""
 
 #: includes/post-types.php:387
@@ -1083,31 +881,19 @@ msgid "Align right"
 msgstr ""
 
 #: includes/post-types.php:419
-msgid ""
-"Alignment small area"
+msgid "Alignment small area"
 msgstr ""
 
 #: includes/post-types.php:457
-msgid ""
-"Copy and paste this "
-"shortcode into your post "
-"or page"
+msgid "Copy and paste this shortcode into your post or page"
 msgstr ""
 
 #: includes/post-types.php:462
-msgid ""
-"Shortcode is available "
-"after saving."
+msgid "Shortcode is available after saving."
 msgstr ""
 
 #: includes/post-types.php:465
-msgid ""
-"Set \"css\" attribute to "
-"\"off\" to display "
-"without CSS styling "
-"options. For example: "
-"[download_after_email id="
-"\"123\" css=\"off\"]"
+msgid "Set \"css\" attribute to \"off\" to display without CSS styling options. For example: [download_after_email id=\"123\" css=\"off\"]"
 msgstr ""
 
 #: includes/post-types.php:475
@@ -1115,28 +901,19 @@ msgid "Default"
 msgstr ""
 
 #: includes/post-types.php:476
-msgid ""
-"No CSS styling options"
+msgid "No CSS styling options"
 msgstr ""
 
 #: includes/post-types.php:489
-msgid ""
-"Use settings of another "
-"download"
+msgid "Use settings of another download"
 msgstr ""
 
 #: includes/post-types.php:490
-msgid ""
-"Download ID (e.g. 215)"
+msgid "Download ID (e.g. 215)"
 msgstr ""
 
 #: includes/post-types.php:491
-msgid ""
-"Duplicate the settings "
-"of another download "
-"during saving, excluding "
-"the section Download "
-"file."
+msgid "Duplicate the settings of another download during saving, excluding the section Download file."
 msgstr ""
 
 #: includes/post-types.php:693
@@ -1144,91 +921,55 @@ msgid "Links"
 msgstr ""
 
 #: includes/preview.php:25
-msgid ""
-"Click the preview button "
-"to see the latest "
-"changes..."
+msgid "Click the preview button to see the latest changes..."
 msgstr ""
 
 #: includes/preview.php:37
-msgid ""
-"Change the size of the "
-"window to see how it "
-"looks in smaller areas. "
-"The preview is displayed "
-"while front-end css has "
-"been loaded, such as the "
-"stylesheet of your "
-"current theme. This may "
-"affect the layout. Make "
-"sure you have selected a "
-"download file before "
-"testing the form."
+msgid "Change the size of the window to see how it looks in smaller areas. The preview is displayed while front-end css has been loaded, such as the stylesheet of your current theme. This may affect the layout. Make sure you have selected a download file before testing the form."
 msgstr ""
 
-#: includes/shortcodes.php:451
-msgid ""
-"There is currently no "
-"download file available."
+#: includes/shortcodes.php:424
+msgid "Too many requests. Please try again later."
 msgstr ""
 
-#: includes/shortcodes.php:595
-msgid ""
-"<p>Hi,</p><p>Thank you "
-"for subscribing.</"
-"p><p>You can find your "
-"Free Download here: "
-"{download_link}</p>"
+#: includes/shortcodes.php:485
+msgid "There is currently no download file available."
 msgstr ""
 
-#: includes/shortcodes.php:669
+#: includes/shortcodes.php:503
+msgid "Your session has expired. Please refresh the page."
+msgstr ""
+
+#: includes/shortcodes.php:638
+msgid "<p>Hi,</p><p>Thank you for subscribing.</p><p>You can find your Free Download here: {download_link}</p>"
+msgstr ""
+
+#: includes/shortcodes.php:712
 msgid "Download File"
 msgstr ""
 
-#: includes/shortcodes.php:684
-msgid ""
-"A download form has been "
-"submitted successfully "
-"with the following "
-"values:"
+#: includes/shortcodes.php:727
+msgid "A download form has been submitted successfully with the following values:"
 msgstr ""
 
-#: includes/shortcodes.php:704
-msgid ""
-"New Download Form "
-"Submission"
+#: includes/shortcodes.php:747
+msgid "New Download Form Submission"
 msgstr ""
 
 #: includes/update.php:10
-msgid ""
-"Download After Email has "
-"been updated "
-"successfully! To "
-"complete the update "
-"process, the database "
-"must be updated. It is "
-"advisable to make a "
-"backup beforehand. "
-"Please do not refresh "
-"the page during the "
-"update process."
+msgid "Download After Email has been updated successfully! To complete the update process, the database must be updated. It is advisable to make a backup beforehand. Please do not refresh the page during the update process."
 msgstr ""
 
 #: includes/update.php:12
-msgid ""
-"The database update for "
-"Download After Email has "
-"been completed!"
+msgid "The database update for Download After Email has been completed!"
 msgstr ""
 
 #: includes/update.php:17
-msgid ""
-"Database update version"
+msgid "Database update version"
 msgstr ""
 
 #: includes/update.php:24
-msgid ""
-"Start/Proceed Update"
+msgid "Start/Proceed Update"
 msgstr ""
 
 #: includes/update.php:25
@@ -1236,21 +977,9 @@ msgid "step(s) to go"
 msgstr ""
 
 #: includes/update.php:122
-msgid ""
-"The database update for "
-"Download After Email "
-"could not be performed "
-"because you do not have "
-"the correct user "
-"permissions."
+msgid "The database update for Download After Email could not be performed because you do not have the correct user permissions."
 msgstr ""
 
 #: includes/update.php:160
-msgid ""
-"The database update for "
-"Download After Email "
-"could not be performed "
-"because a new database "
-"table could not be "
-"created."
+msgid "The database update for Download After Email could not be performed because a new database table could not be created."
 msgstr ""

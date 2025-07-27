@@ -1,9 +1,9 @@
 <?php
 /*
 Plugin Name: Download After Email
-Plugin URI: https://www.download-after-email.com/
+Plugin URI: https://www.download-after-email.com
 Description: Subscribe & Download plugin for gaining subscribers by offering free downloads.
-Version: 2.1.6
+Version: 2.1.7
 Author: MK-Scripts
 Text Domain: download-after-email
 Domain Path: /languages
@@ -13,7 +13,7 @@ if( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-define( 'DAE_VERSION', '2.1.6' );
+define( 'DAE_VERSION', '2.1.7' );
 
 if( ! function_exists( 'mckp_function_exists' ) ) {
 	
@@ -217,6 +217,8 @@ if( ! mckp_function_exists( 'dae_deactivation' ) && is_admin() ) {
 
 			}
 
+			wp_clear_scheduled_hook( 'dae_cleanup_expired_transients' );
+
 			do_action( 'dae_deactivation' );
 
 			if ( is_multisite() && $network_wide ) {
@@ -376,7 +378,11 @@ if( ! mckp_function_exists( array(
 	'mckp_sanitize_form_content',
 	'mckp_get_links_count',
 	'dae_get_download_file_name',
-	'dae_set_db_version'
+	'dae_set_db_version',
+	'dae_setup_uploads_folder',
+	'dae_check_ajax_nonce',
+	'dae_rate_limit_check',
+	'dae_get_download_filepath'
 ) ) ) {
 	require_once( plugin_dir_path( __FILE__ ) . 'includes/functions.php' );
 }
@@ -390,6 +396,7 @@ if( ! mckp_function_exists( array(
 	'dae_content_shortcode_return',
 	'dae_shortcodes_init',
 	'dae_content_shortcode',
+	'dae_create_ajax_nonce',
 	'dae_send_downloadlink',
 	'dae_mail_alt_body',
 	'dae_filter_email_content_type',
@@ -406,6 +413,12 @@ if( ! mckp_function_exists( 'dae_download_file' ) ) {
 
 if( ! mckp_function_exists( 'dae_content_preview' ) ) {
 	require_once( plugin_dir_path( __FILE__ ) . 'includes/preview.php' );
+}
+
+if( ! mckp_function_exists( array(
+	'dae_cleanup_expired_transients_callback'
+) ) ) {
+	require_once( plugin_dir_path( __FILE__ ) . 'includes/cron.php' );
 }
 
 if( is_admin() ) {

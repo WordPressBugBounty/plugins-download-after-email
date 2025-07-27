@@ -393,13 +393,47 @@ function dae_shortcodes_init() {
 	
 }
 
+add_action( 'wp_ajax_dae_create_ajax_nonce', 'dae_create_ajax_nonce' );
+add_action( 'wp_ajax_nopriv_dae_create_ajax_nonce', 'dae_create_ajax_nonce' );
+
+function dae_create_ajax_nonce() {
+	
+	if ( ! dae_rate_limit_check( 'create_ajax_nonce', 5, 60 ) ) {
+		wp_send_json_error( array( 'message' => 'Too many requests. Please try again later.' ) );
+	}
+
+	if ( empty( $_POST['file'] ) ) {
+		wp_send_json_error( array( 'message' => 'Missing file parameter' ) );
+	}
+
+	$file = basename( sanitize_text_field( $_POST['file'] ) );
+	$action = 'dae_download_' . $file;
+	$nonce = wp_create_nonce( $action );
+
+	wp_send_json_success( array( 'nonce' => $nonce ) );
+
+}
+
 add_action( 'wp_ajax_dae_send_downloadlink', 'dae_send_downloadlink' );
 add_action( 'wp_ajax_nopriv_dae_send_downloadlink', 'dae_send_downloadlink' );
 
 function dae_send_downloadlink() {
-	
+
+	if ( ! dae_rate_limit_check( 'send_downloadlink', 5, 60 ) ) {
+
+		$form_message = apply_filters( 'dae_form_rate_limit_message', __( 'Too many requests. Please try again later.', 'download-after-email' ) );
+
+		echo json_encode( array(
+			'type'		=> 'limit',
+			'message'	=> '<span class="dae-shortcode-register-error">' . $form_message . '</span>'
+		) );
+
+		wp_die();
+
+	}
+
 	$_POST = stripslashes_deep( $_POST );
-	
+
 	$messages = get_option( 'dae_messages' );
 	$field_labels = get_option( 'dae_field_labels' );
 	$fields = get_option( 'dae_fields' );
@@ -446,7 +480,7 @@ function dae_send_downloadlink() {
 		
 	}
 
-	if ( empty( $file ) ) {
+	if ( empty( dae_get_download_filepath( $file ) ) ) {
 
 		$form_message = apply_filters( 'dae_form_missing_file_message', __( 'There is currently no download file available.', 'download-after-email' ) );
 
@@ -455,12 +489,21 @@ function dae_send_downloadlink() {
 			'message'	=> '<span class="dae-shortcode-register-error">' . $form_message . '</span>'
 		) );
 
-	} elseif ( empty( $required_checkbox ) || $empty_values || ! dae_check_ecnon() ) {
+	} elseif ( empty( $required_checkbox ) || $empty_values ) {
 
 		$form_message = ! empty( $messages['unvalid_input'] ) ? $messages['unvalid_input'] : __( 'Please make sure all fields are filled in correctly.', 'download-after-email' );
 
 		echo json_encode( array(
 			'type'		=> 'empty',
+			'message'	=> '<span class="dae-shortcode-register-error">' . $form_message . '</span>'
+		) );
+
+	} elseif ( ! dae_check_ajax_nonce() ) {
+
+		$form_message = apply_filters( 'dae_form_session_expired_message', __( 'Your session has expired. Please refresh the page.', 'download-after-email' ) );
+
+		echo json_encode( array(
+			'type'		=> 'expired',
 			'message'	=> '<span class="dae-shortcode-register-error">' . $form_message . '</span>'
 		) );
 

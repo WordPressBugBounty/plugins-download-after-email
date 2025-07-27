@@ -13,7 +13,7 @@ function dae_download_file() {
 
     $_GET = stripslashes_deep( $_GET );
 
-    $file = sanitize_text_field( $_GET['file'] );
+    $file = basename( sanitize_text_field( $_GET['file'] ) );
     $email = sanitize_email( $_GET['email'] );
 
     $messages = get_option( 'dae_messages' );
@@ -54,18 +54,9 @@ function dae_download_file() {
 
     }
 
-    $upload_dir = wp_upload_dir();
-    $filepath = $upload_dir['basedir'] . '/dae-uploads/' . $file;
+    $filepath = dae_get_download_filepath( $file );
 
-    if ( ! file_exists( $filepath ) ) {
-        $filepath = $upload_dir['basedir'] . '/' . $file;
-    }
-
-    if ( ! file_exists( $filepath ) ) {
-        $filepath = $upload_dir['path'] . '/' . $file;
-    }
-
-    if ( ! file_exists( $filepath ) ) {
+    if ( empty( $filepath ) ) {
         die( ! empty( $messages['download_failed'] ) ? esc_html( $messages['download_failed'] ) : esc_html__( 'This download file could not be found. Please try again or feel free to contact us.', 'download-after-email' ) );
 	}
 

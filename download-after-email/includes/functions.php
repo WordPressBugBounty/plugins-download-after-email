@@ -182,19 +182,41 @@ function mckp_get_client_ip() {
 
 	$ipaddress = '';
 
-	if ( isset( $_SERVER['HTTP_CLIENT_IP'] ) ) {
-		$ipaddress = $_SERVER['HTTP_CLIENT_IP'];
-	} elseif ( isset( $_SERVER['HTTP_X_FORWARDED_FOR'] ) ) {
-		$ipaddress = $_SERVER['HTTP_X_FORWARDED_FOR'];
-	} elseif ( isset( $_SERVER['HTTP_X_FORWARDED'] ) ) {
-		$ipaddress = $_SERVER['HTTP_X_FORWARDED'];
-	} elseif ( isset( $_SERVER['HTTP_FORWARDED_FOR'] ) ) {
-		$ipaddress = $_SERVER['HTTP_FORWARDED_FOR'];
-	} elseif ( isset( $_SERVER['HTTP_FORWARDED'] ) ) {
-		$ipaddress = $_SERVER['HTTP_FORWARDED'];
-	} elseif ( isset( $_SERVER['REMOTE_ADDR'] ) ) {
-		$ipaddress = $_SERVER['REMOTE_ADDR'];
-	} else {
+	// Check for X-Forwarded-For header (may contain multiple IPs)
+	if ( ! empty( $_SERVER['HTTP_X_FORWARDED_FOR'] ) ) {
+		$ips = explode( ',', $_SERVER['HTTP_X_FORWARDED_FOR'] );
+		foreach ( $ips as $ip ) {
+			$ip = trim( $ip );
+			if (
+				filter_var( $ip, FILTER_VALIDATE_IP, FILTER_FLAG_NO_PRIV_RANGE | FILTER_FLAG_NO_RES_RANGE )
+			) {
+				$ipaddress = $ip;
+				break;
+			}
+		}
+	}
+
+	// Fallback to HTTP_CLIENT_IP
+	if ( empty( $ipaddress ) && ! empty( $_SERVER['HTTP_CLIENT_IP'] ) ) {
+		$ip = $_SERVER['HTTP_CLIENT_IP'];
+		if (
+			filter_var( $ip, FILTER_VALIDATE_IP, FILTER_FLAG_NO_PRIV_RANGE | FILTER_FLAG_NO_RES_RANGE )
+		) {
+			$ipaddress = $ip;
+		}
+	}
+
+	// Fallback to REMOTE_ADDR
+	if ( empty( $ipaddress ) && ! empty( $_SERVER['REMOTE_ADDR'] ) ) {
+		$ip = $_SERVER['REMOTE_ADDR'];
+		if (
+			filter_var( $ip, FILTER_VALIDATE_IP )
+		) {
+			$ipaddress = $ip;
+		}
+	}
+
+	if ( empty( $ipaddress ) ) {
 		$ipaddress = 'Unknown';
 	}
 
@@ -386,21 +408,63 @@ function dae_setup_uploads_folder() {
 
 }
 
-function dae_check_ecnon() {
+function dae_check_ajax_nonce() {
 
-	if ( empty( $_POST['ecnon'] ) ) {
-		$_POST['ecnon'] = 0;
+	if ( empty( $_POST['file'] ) || empty( $_POST['dae_nonce'] ) ) {
+		return false;
 	}
 
-	$hours = current_time( 'H', true );
-	$ecnon = $hours * $hours;
-	$hours_alt = $hours + 1;
-	$ecnon_alt = $hours_alt * $hours_alt;
+	$file = basename( sanitize_text_field( $_POST['file'] ) );
+	$action = 'dae_download_' . $file;
 
-	if ( $_POST['ecnon'] == $ecnon || $_POST['ecnon'] == $ecnon_alt ) {
+	return check_ajax_referer( $action, 'dae_nonce', false ) !== false;
+
+}
+
+function dae_rate_limit_check( $action, $max_requests = 5, $window_seconds = 60 ) {
+
+	$ip = mckp_get_client_ip();
+	$key = 'dae_rate_limit_' . $action . '_' . md5( $ip );
+	$data = get_transient( $key );
+	$now = time();
+
+	if ( ! $data || ! is_array( $data ) || $now > $data['window_start'] + $window_seconds ) {
+		$data = array( 'count' => 1, 'window_start' => $now );
+		set_transient( $key, $data, $window_seconds );
+		return true;
+	} elseif ( $data['count'] < $max_requests ) {
+		$data['count']++;
+		set_transient( $key, $data, $window_seconds - ( $now - $data['window_start'] ) );
 		return true;
 	} else {
 		return false;
+	}
+
+}
+
+function dae_get_download_filepath( $file ) {
+
+	// Exclude dotfiles (files starting with a dot)
+    if ( strpos( $file, '.' ) === 0 ) {
+        return false;
+    }
+
+	$upload_dir = wp_upload_dir();
+
+    $filepath = $upload_dir['basedir'] . '/dae-uploads/' . $file;
+
+    if ( ! file_exists( $filepath ) ) {
+        $filepath = $upload_dir['basedir'] . '/' . $file;
+    }
+
+    if ( ! file_exists( $filepath ) ) {
+        $filepath = $upload_dir['path'] . '/' . $file;
+    }
+
+    if ( ! file_exists( $filepath ) ) {
+        return false;
+	} else {
+		return true;
 	}
 
 }

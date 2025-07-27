@@ -1,10 +1,10 @@
 === Download After Email - Subscribe & Download Form Plugin ===
 Contributors: mkscripts
-Tags: subscribe, download, form, email, email download, subscribe download, download link, download form, subscribe form, opt-in form, subscribe mailchimp, mailchimp
+Tags: download form, downloads, opt-in, subscribe, mailchimp
 Requires at least: 5.6
-Tested up to: 6.4
-Stable tag: 2.1.6
-Requires PHP: 5.3
+Tested up to: 6.8
+Stable tag: 2.1.7
+Requires PHP: 5.4
 License: GPLv3
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 
@@ -77,6 +77,13 @@ Some plugins or changes that you make to WordPress can cause extra spaces and/or
 1. Start making your first download and test it with the preview option before placing the generated shortcode on a page, post or widget.
 
 == Changelog ==
+
+= 2.1.7 =
+* Improved security against abuse of download forms (including SPAM/CSRF).
+* Improved front-end nonce functionality (caching friendly).
+* New rate limiting functionality against brute-force usage of download forms.
+* Improved validation of download file names during download form submission and download process.
+* Improved function to get client IP.
 
 = 2.1.6 =
 * Added alt attribute to download images for SEO improvement.
@@ -153,9 +160,3 @@ Some plugins or changes that you make to WordPress can cause extra spaces and/or
 * New subscriber var Subscriber->has_used_links.
 * New subscriber meta value optin_time.
 * Also run integrations if optional checkbox is empty but optin time isset and no links have been used.
-
-= 2.0.3 =
-* Fixed CSS not loaded with multiple shortcodes on blog page.
-* New shortcode attribute to disable CSS styling options. For developers, do_shortcode() now uses CSS styling options by default.
-* New preview option to display download form without CSS styling options.
-* Fixed download issue with large files.
