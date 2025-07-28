@@ -3,7 +3,7 @@ Contributors: mkscripts
 Tags: download form, downloads, opt-in, subscribe, mailchimp
 Requires at least: 5.6
 Tested up to: 6.8
-Stable tag: 2.1.7
+Stable tag: 2.1.8
 Requires PHP: 5.4
 License: GPLv3
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
@@ -77,6 +77,9 @@ Some plugins or changes that you make to WordPress can cause extra spaces and/or
 1. Start making your first download and test it with the preview option before placing the generated shortcode on a page, post or widget.
 
 == Changelog ==
+
+= 2.1.8 =
+* Fixed download file could not be opened.
 
 = 2.1.7 =
 * Improved security against abuse of download forms (including SPAM/CSRF).

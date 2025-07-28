@@ -464,7 +464,7 @@ function dae_get_download_filepath( $file ) {
     if ( ! file_exists( $filepath ) ) {
         return false;
 	} else {
-		return true;
+		return $filepath;
 	}
 
 }
