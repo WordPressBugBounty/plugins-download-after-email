@@ -3,31 +3,31 @@
 Plugin Name: Download After Email
 Plugin URI: https://www.download-after-email.com
 Description: Subscribe & Download plugin for gaining subscribers by offering free downloads.
-Version: 2.1.8
+Version: 2.1.9
 Author: MK-Scripts
 Text Domain: download-after-email
 Domain Path: /languages
 */
 
-if( ! defined( 'ABSPATH' ) ) {
+if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-define( 'DAE_VERSION', '2.1.8' );
+define( 'DAE_VERSION', '2.1.9' );
 
-if( ! function_exists( 'mckp_function_exists' ) ) {
+if ( ! function_exists( 'mckp_function_exists' ) ) {
 	
 	function mckp_function_exists( $functions ) {
 		
 		$match = false;
 		
-		if( ! is_array( $functions ) ) {
+		if ( ! is_array( $functions ) ) {
 			$functions = array( $functions );
 		}
 		
-		foreach( $functions as $function ) {
+		foreach ( $functions as $function ) {
 			
-			if(
+			if (
 				function_exists( $function )
 				|| has_action( 'wp_ajax_' . $function )
 				|| has_action( 'wp_ajax_nopriv_' . $function )
@@ -37,9 +37,9 @@ if( ! function_exists( 'mckp_function_exists' ) ) {
 			
 		}
 		
-		if( true == $match ) {
+		if ( true == $match ) {
 			
-			if( ! has_action( 'admin_notices', 'mckp_content_admin_notice' ) ) {
+			if ( ! has_action( 'admin_notices', 'mckp_content_admin_notice' ) ) {
 				
 				add_action( 'admin_notices', 'mckp_content_admin_notice' );
 				function mckp_content_admin_notice() {
@@ -62,7 +62,7 @@ if( ! function_exists( 'mckp_function_exists' ) ) {
 	
 }
 
-if( ! mckp_function_exists( 'dae_load_plugin_textdomain' ) ) {
+if ( ! mckp_function_exists( 'dae_load_plugin_textdomain' ) ) {
 	
 	add_action( 'init', 'dae_load_plugin_textdomain' );
 	function dae_load_plugin_textdomain() {
@@ -71,7 +71,7 @@ if( ! mckp_function_exists( 'dae_load_plugin_textdomain' ) ) {
 	
 }
 
-if( ! mckp_function_exists( 'dae_activation' ) && is_admin() ) {
+if ( ! mckp_function_exists( 'dae_activation' ) && is_admin() ) {
 
 	register_activation_hook( __FILE__, 'dae_activation' );
 	function dae_activation( $network_wide ) {
@@ -89,6 +89,8 @@ if( ! mckp_function_exists( 'dae_activation' ) && is_admin() ) {
 			if ( is_multisite() && $network_wide ) {
 				switch_to_blog( $site );
 			}
+
+			// Add database tables
 
 			$table_subscribers = $wpdb->prefix . 'dae_subscribers';
 			$table_subscribermeta = $wpdb->prefix . 'dae_subscribermeta';
@@ -147,6 +149,8 @@ if( ! mckp_function_exists( 'dae_activation' ) && is_admin() ) {
 			require_once( ABSPATH . 'wp-admin/includes/upgrade.php' );
 			dbDelta( $sql );
 
+			// Add options
+
 			add_option( 'dae_field_labels', array( 'Email' ), '', false );
 			add_option( 'dae_fields', array(
 				'email_visible'	=> 'visible',
@@ -156,9 +160,59 @@ if( ! mckp_function_exists( 'dae_activation' ) && is_admin() ) {
 			add_option( 'dae_subscribers_per_page', 25, '', false );
 			add_option( 'dae_options', array(), '', false );
 
-			dae_set_db_version();
+			// Set or update database version
 
-			dae_setup_uploads_folder();
+			global $wpdb;
+			$table_options = $wpdb->prefix . 'options';
+
+			$count = $wpdb->get_var( $wpdb->prepare( "SELECT COUNT(option_id) FROM $table_options WHERE option_name LIKE %s", 'mckp_download_nonce%' ) );
+
+			if ( empty( $count ) ) {
+				update_option( 'dae_db_version', '1.1', false );
+			} else {
+				update_option( 'dae_db_version', '1.0', false );
+    		}
+
+			// Setup the dae-uploads folder
+
+			$upload_dir = wp_upload_dir();
+		
+			$dirname = $upload_dir['basedir'] . '/dae-uploads';
+		
+			if ( ! file_exists( $dirname ) ) {
+				wp_mkdir_p( $dirname );
+			}
+		
+			if ( file_exists( $dirname ) ) {
+				
+				$file_path = $dirname . '/.htaccess';
+		
+				$marker = 'DAE deny access download files';
+			
+				$insertion = '
+				<IfModule !authz_core_module>
+					Order Deny,Allow
+					Deny from all
+					<FilesMatch "\.(jpg|jpeg)$">
+						Allow from all
+					</FilesMatch>
+				</IfModule>
+				<IfModule authz_core_module>
+					Require all denied
+					<FilesMatch "\.(jpg|jpeg)$">
+						<RequireAll>
+							Require all granted
+						</RequireAll>
+					</FilesMatch>
+				</IfModule>
+				';
+
+				// Remove leading whitespace from each line for .htaccess readability
+				$insertion = preg_replace('/^[ \t]+/m', '', $insertion);
+
+				insert_with_markers( $file_path, $marker, $insertion );
+
+			}
 
 			if ( is_multisite() && $network_wide ) {
 				restore_current_blog();
@@ -170,7 +224,7 @@ if( ! mckp_function_exists( 'dae_activation' ) && is_admin() ) {
 
 }
 
-if( ! mckp_function_exists( 'dae_deactivation' ) && is_admin() ) {
+if ( ! mckp_function_exists( 'dae_deactivation' ) && is_admin() ) {
 
 	register_deactivation_hook( __FILE__, 'dae_deactivation' );
 	function dae_deactivation( $network_wide ) {
@@ -191,11 +245,11 @@ if( ! mckp_function_exists( 'dae_deactivation' ) && is_admin() ) {
 
 			$dae_options = get_option( 'dae_options' );
 
-			if( ! empty( $dae_options['delete_messages'] ) ) {
+			if ( ! empty( $dae_options['delete_messages'] ) ) {
 				delete_option( 'dae_messages' );
 			}
 
-			if( ! empty( $dae_options['delete_subscribers'] ) ) {
+			if ( ! empty( $dae_options['delete_subscribers'] ) ) {
 
 				$table_names = array(
 					$wpdb->prefix . 'dae_subscribers',
@@ -210,7 +264,7 @@ if( ! mckp_function_exists( 'dae_deactivation' ) && is_admin() ) {
 
 			}
 
-			if( ! file_exists( plugin_dir_path( __DIR__ ) . 'dae-plus/dae-plus.php' ) ) {
+			if ( ! file_exists( plugin_dir_path( __DIR__ ) . 'dae-plus/dae-plus.php' ) ) {
 
 				delete_option( 'dae_field_labels' );
 				delete_option( 'dae_fields' );
@@ -231,7 +285,7 @@ if( ! mckp_function_exists( 'dae_deactivation' ) && is_admin() ) {
 
 }
 
-if( ! mckp_function_exists( 'dae_uninstall' ) && is_admin() ) {
+if ( ! mckp_function_exists( 'dae_uninstall' ) && is_admin() ) {
 	
 	register_uninstall_hook( __FILE__, 'dae_uninstall' );
 	function dae_uninstall() {
@@ -262,7 +316,7 @@ if( ! mckp_function_exists( 'dae_uninstall' ) && is_admin() ) {
 
 }
 
-if( ! mckp_function_exists( 'dae_wp_enqueue_scripts' ) && ! is_admin() ) {
+if ( ! mckp_function_exists( 'dae_wp_enqueue_scripts' ) && ! is_admin() ) {
 	
 	add_action( 'wp_enqueue_scripts', 'dae_wp_enqueue_scripts' );
 	function dae_wp_enqueue_scripts() {
@@ -278,24 +332,24 @@ if( ! mckp_function_exists( 'dae_wp_enqueue_scripts' ) && ! is_admin() ) {
 		wp_localize_script( 'dae-download', 'objDaeDownload', array(
 			'ajaxUrl'	=> admin_url( 'admin-ajax.php' ),
 			'nonce'		=> $download_nonce,
-		));
+		) );
 		
 	}
 	
 }
 
-if( ! mckp_function_exists( 'dae_admin_enqueue_scripts' ) && is_admin() ) {
+if ( ! mckp_function_exists( 'dae_admin_enqueue_scripts' ) && is_admin() ) {
 	
 	add_action( 'admin_enqueue_scripts', 'dae_admin_enqueue_scripts' );
 	function dae_admin_enqueue_scripts( $hook ) {
 
 		dae_enqueue_update();
 		
-		if( ( $hook == 'post.php' || $hook == 'post-new.php' ) && get_post_type() == 'dae_download' ) {
+		if ( ( $hook == 'post.php' || $hook == 'post-new.php' ) && get_post_type() == 'dae_download' ) {
 			wp_enqueue_media();
 		}
 		
-		if(
+		if (
 			( ( 'post.php' == $hook || 'post-new.php' == $hook ) && 'dae_download' == get_post_type() )
 			|| 'dae_download_page_dae-messages' == $hook
 			|| 'dae_download_page_dae-subscribers' == $hook
@@ -317,11 +371,11 @@ if( ! mckp_function_exists( 'dae_admin_enqueue_scripts' ) && is_admin() ) {
 				'noImage'			=> __( 'No image selected', 'download-after-email' ),
 				'noFile'			=> __( 'No file selected', 'download-after-email' ),
 				'removeSubscriber'	=> __( 'Are you sure you want to remove this subscriber, including the attached data of the downloadlinks?', 'download-after-email' ),
-			));
+			) );
 			
 		}
 
-		if( ( $hook == 'post.php' || $hook == 'post-new.php' ) && get_post_type() == 'dae_download' ) {
+		if ( ( $hook == 'post.php' || $hook == 'post-new.php' ) && get_post_type() == 'dae_download' ) {
 
 			$upload_dir = wp_upload_dir();
 			$dirname = '';
@@ -369,7 +423,7 @@ if( ! mckp_function_exists( 'dae_admin_enqueue_scripts' ) && is_admin() ) {
 	
 }
 
-if( ! mckp_function_exists( array(
+if ( ! mckp_function_exists( array(
 	'mckp_create_nonce',
 	'mckp_verify_nonce',
 	'mckp_delete_nonce',
@@ -391,7 +445,7 @@ if ( ! class_exists( 'DAE_Subscriber' ) ) {
 	require_once( plugin_dir_path( __FILE__ ) . 'includes/class-dae-subscriber.php' );
 }
 
-if( ! mckp_function_exists( array(
+if ( ! mckp_function_exists( array(
 	'dae_content_shortcode_css_return',
 	'dae_content_shortcode_return',
 	'dae_shortcodes_init',
@@ -407,23 +461,23 @@ if( ! mckp_function_exists( array(
 	require_once( plugin_dir_path( __FILE__ ) . 'includes/shortcodes.php' );
 }
 
-if( ! mckp_function_exists( 'dae_download_file' ) ) {
+if ( ! mckp_function_exists( 'dae_download_file' ) ) {
 	require_once( plugin_dir_path( __FILE__ ) . 'includes/download.php' );
 }
 
-if( ! mckp_function_exists( 'dae_content_preview' ) ) {
+if ( ! mckp_function_exists( 'dae_content_preview' ) ) {
 	require_once( plugin_dir_path( __FILE__ ) . 'includes/preview.php' );
 }
 
-if( ! mckp_function_exists( array(
+if ( ! mckp_function_exists( array(
 	'dae_cleanup_expired_transients_callback'
 ) ) ) {
 	require_once( plugin_dir_path( __FILE__ ) . 'includes/cron.php' );
 }
 
-if( is_admin() ) {
+if ( is_admin() ) {
 	
-	if( ! mckp_function_exists( array(
+	if ( ! mckp_function_exists( array(
 		'dae_post_types_init',
 		'dae_download_updated_messages',
 		'dae_add_meta_boxes_download',
@@ -441,7 +495,7 @@ if( is_admin() ) {
 		require_once( plugin_dir_path( __FILE__ ) . 'includes/post-types.php' );
 	}
 	
-	if( ! mckp_function_exists( array(
+	if ( ! mckp_function_exists( array(
 		'dae_sanitize_cb_html',
 		'dae_sanitize_cb_text',
 		'dae_settings_init',
@@ -459,7 +513,7 @@ if( is_admin() ) {
 		require_once( plugin_dir_path( __FILE__ ) . 'includes/admin-menu.php' );
 	}
 
-	if( ! mckp_function_exists( array(
+	if ( ! mckp_function_exists( array(
 		'dae_content_update_admin_notice',
 		'dae_add_update_admin_notice',
 		'dae_enqueue_update',
