@@ -469,4 +469,45 @@ function dae_get_download_filepath( $file ) {
 
 }
 
-?>
+/**
+ * Check if a file is allowed for download (exists in uploads and is referenced by a published dae_download post).
+ * @param string $file The file name (basename, e.g. myfile.pdf)
+ * @return bool
+ */
+function dae_is_file_allowed_for_download( $file ) {
+
+	global $wpdb;
+
+ 	// Find all file IDs by matching _wp_attached_file meta value (ends with /$file)
+ 	$file_ids = $wpdb->get_col( $wpdb->prepare(
+ 		"SELECT post_id FROM $wpdb->postmeta WHERE meta_key = '_wp_attached_file' AND meta_value LIKE %s",
+ 		'%' . $wpdb->esc_like( '/' . $file )
+ 	) );
+ 
+ 	if ( empty( $file_ids ) ) {
+ 		return false;
+ 	}
+ 
+ 	// Check for published dae_download referencing any of these file_ids in dae_settings
+ 	foreach ( $file_ids as $file_id ) {
+ 		$posts = get_posts( array(
+ 			'post_type' => 'dae_download',
+ 			'post_status' => 'publish',
+ 			'meta_query' => array(
+ 				array(
+ 					'key' => 'dae_settings',
+ 					'value' => 's:7:"file_id";i:' . intval( $file_id ) . ';',
+ 					'compare' => 'LIKE',
+ 				),
+ 			),
+ 			'fields' => 'ids',
+ 			'posts_per_page' => 1,
+ 		) );
+ 		if ( ! empty( $posts ) ) {
+ 			return true;
+ 		}
+ 	}
+ 
+ 	return false;
+
+}

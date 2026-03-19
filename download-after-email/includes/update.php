@@ -202,5 +202,3 @@ function dae_update_database() {
 	wp_die();
 
 }
-
-?>

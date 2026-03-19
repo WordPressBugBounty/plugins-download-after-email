@@ -43,5 +43,3 @@ function dae_cleanup_expired_transients_callback() {
 		);
 	}
 }
-
-?>

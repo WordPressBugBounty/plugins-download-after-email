@@ -374,5 +374,3 @@ class DAE_Subscriber {
     }
 
 }
-
-?>

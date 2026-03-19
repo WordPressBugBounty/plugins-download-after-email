@@ -735,5 +735,3 @@ function dae_custom_download_column( $column, $post_id ) {
 	}
 
 }
-
-?>

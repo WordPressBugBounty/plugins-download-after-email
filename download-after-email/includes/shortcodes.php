@@ -440,6 +440,20 @@ function dae_send_downloadlink() {
 	$options = get_option( 'dae_options' );
 
 	$file = basename( sanitize_text_field( $_POST['file'] ) );
+
+	if ( ! dae_is_file_allowed_for_download( $file ) ) {
+
+		$form_message = apply_filters( 'dae_form_allowed_file_message', __( 'This file is not allowed for download.', 'download-after-email' ) );
+
+		echo json_encode( array(
+			'type'		=> 'limit',
+			'message'	=> '<span class="dae-shortcode-register-error">' . $form_message . '</span>'
+		) );
+
+		wp_die();
+
+	}
+
 	$form_content = mckp_sanitize_form_content( $_POST['form_content'] );
 
 	if ( empty( $messages['required_checkbox'] ) ) {
@@ -777,5 +791,3 @@ function dae_send_downloadlink() {
 	wp_die();
 	
 }
-
-?>

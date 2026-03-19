@@ -22,6 +22,10 @@ function dae_download_file() {
         die( ! empty( $messages['unvalid_link'] ) ? esc_html( $messages['unvalid_link'] ) : esc_html__( 'This link has already been used and is now unavailable.', 'download-after-email' ) );
     }
 
+    if ( ! dae_is_file_allowed_for_download( $file ) ) {
+        die( esc_html__( 'This file is not allowed for download.', 'download-after-email' ) );
+    }
+
     if ( $subscriber = DAE_Subscriber::get_instance( $email ) ) {
 
         if ( empty( $messages['optional_checkbox'] ) && apply_filters( 'dae_run_integrations', true, $subscriber, $file ) ) {
@@ -107,5 +111,3 @@ function dae_download_file() {
     exit;
 
 }
-
-?>

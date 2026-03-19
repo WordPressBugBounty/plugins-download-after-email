@@ -652,5 +652,3 @@ function dae_admin_footer_text( $content ) {
 	return $content;
 	
 }
-
-?>

@@ -1,13 +1,13 @@
-# Copyright (C) 2025 MK-Scripts
+# Copyright (C) 2026 MK-Scripts
 # This file is distributed under the same license as the Download After Email plugin.
 msgid ""
 msgstr ""
-"Project-Id-Version: Download After Email 2.1.7\n"
+"Project-Id-Version: Download After Email 2.1.10\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/download-after-email\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2025-07-27T19:13:46+02:00\n"
+"POT-Creation-Date: 2026-03-19T01:11:07+01:00\n"
 "X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: download-after-email\n"
 
@@ -15,38 +15,38 @@ msgstr ""
 msgid "\"Download after Email\" is using the same name for a variable, function or a class as another plugin and may not function as expected. "
 msgstr ""
 
-#: dae.php:315
+#: dae.php:369
 #: includes/functions.php:274
 msgid "Select File"
 msgstr ""
 
-#: dae.php:316
+#: dae.php:370
 msgid "Select"
 msgstr ""
 
-#: dae.php:317
+#: dae.php:371
 #: includes/functions.php:244
 msgid "No image selected"
 msgstr ""
 
-#: dae.php:318
+#: dae.php:372
 #: includes/functions.php:265
 msgid "No file selected"
 msgstr ""
 
-#: dae.php:319
+#: dae.php:373
 msgid "Are you sure you want to remove this subscriber, including the attached data of the downloadlinks?"
 msgstr ""
 
-#: dae.php:340
+#: dae.php:394
 msgid "The dae-uploads folder could not be created within your Wordpress uploads folder during the activation of Download After Email. Try to adjust the permissions of your uploads folder and re-activate the plugin."
 msgstr ""
 
-#: dae.php:341
+#: dae.php:395
 msgid "More information about changing file permissions for Wordpress."
 msgstr ""
 
-#: dae.php:357
+#: dae.php:411
 msgid "The php_fileinfo extension is currently disabled in your PHP configuration settings. Download After Email needs this setting to be enabled for certain functionalities."
 msgstr ""
 
@@ -127,8 +127,8 @@ msgid "Unvalid Input"
 msgstr ""
 
 #: includes/admin-menu.php:172
-#: includes/shortcodes.php:494
-#: includes/shortcodes.php:512
+#: includes/shortcodes.php:508
+#: includes/shortcodes.php:526
 msgid "Please make sure all fields are filled in correctly."
 msgstr ""
 
@@ -137,7 +137,7 @@ msgid "Email Exists"
 msgstr ""
 
 #: includes/admin-menu.php:179
-#: includes/shortcodes.php:566
+#: includes/shortcodes.php:580
 msgid "An email with the download link has already been sent to this email address."
 msgstr ""
 
@@ -146,7 +146,7 @@ msgid "Email Success"
 msgstr ""
 
 #: includes/admin-menu.php:186
-#: includes/shortcodes.php:764
+#: includes/shortcodes.php:778
 msgid "An email has been sent with the download link."
 msgstr ""
 
@@ -168,7 +168,7 @@ msgid "Download Failed"
 msgstr ""
 
 #: includes/admin-menu.php:206
-#: includes/download.php:60
+#: includes/download.php:64
 msgid "This download file could not be found. Please try again or feel free to contact us."
 msgstr ""
 
@@ -185,7 +185,7 @@ msgid "Email Subject"
 msgstr ""
 
 #: includes/admin-menu.php:221
-#: includes/shortcodes.php:635
+#: includes/shortcodes.php:649
 msgid "Your Free Download"
 msgstr ""
 
@@ -421,6 +421,11 @@ msgstr ""
 #: includes/admin-menu.php:642
 #, php-format
 msgid "If you like Download After Email, please give us a %s rating. A huge thanks in advance!"
+msgstr ""
+
+#: includes/download.php:26
+#: includes/shortcodes.php:446
+msgid "This file is not allowed for download."
 msgstr ""
 
 #: includes/post-types.php:11
@@ -932,27 +937,27 @@ msgstr ""
 msgid "Too many requests. Please try again later."
 msgstr ""
 
-#: includes/shortcodes.php:485
+#: includes/shortcodes.php:499
 msgid "There is currently no download file available."
 msgstr ""
 
-#: includes/shortcodes.php:503
+#: includes/shortcodes.php:517
 msgid "Your session has expired. Please refresh the page."
 msgstr ""
 
-#: includes/shortcodes.php:638
+#: includes/shortcodes.php:652
 msgid "<p>Hi,</p><p>Thank you for subscribing.</p><p>You can find your Free Download here: {download_link}</p>"
 msgstr ""
 
-#: includes/shortcodes.php:712
+#: includes/shortcodes.php:726
 msgid "Download File"
 msgstr ""
 
-#: includes/shortcodes.php:727
+#: includes/shortcodes.php:741
 msgid "A download form has been submitted successfully with the following values:"
 msgstr ""
 
-#: includes/shortcodes.php:747
+#: includes/shortcodes.php:761
 msgid "New Download Form Submission"
 msgstr ""
 

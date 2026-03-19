@@ -3,7 +3,7 @@
 Plugin Name: Download After Email
 Plugin URI: https://www.download-after-email.com
 Description: Subscribe & Download plugin for gaining subscribers by offering free downloads.
-Version: 2.1.9
+Version: 2.1.10
 Author: MK-Scripts
 Text Domain: download-after-email
 Domain Path: /languages
@@ -13,7 +13,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-define( 'DAE_VERSION', '2.1.9' );
+define( 'DAE_VERSION', '2.1.10' );
 
 if ( ! function_exists( 'mckp_function_exists' ) ) {
 	
@@ -436,7 +436,8 @@ if ( ! mckp_function_exists( array(
 	'dae_setup_uploads_folder',
 	'dae_check_ajax_nonce',
 	'dae_rate_limit_check',
-	'dae_get_download_filepath'
+	'dae_get_download_filepath',
+	'dae_is_file_allowed_for_download'
 ) ) ) {
 	require_once( plugin_dir_path( __FILE__ ) . 'includes/functions.php' );
 }
@@ -523,5 +524,3 @@ if ( is_admin() ) {
 	}
 	
 }
-
-?>
